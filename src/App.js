@@ -13,6 +13,9 @@ import {
 import { setCurrentUser } from "./redux/user/user.action";
 import { connect } from "react-redux";
 
+import { createStructuredSelector } from "reselect";
+import { selectCurrentUser } from "./redux/user/user.selector";
+
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
@@ -67,8 +70,8 @@ class App extends React.Component {
 }
 
 // destructuring user from state
-const mapStateToProps = state => ({
-  currentUser: state.user.currentUser
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
 });
 
 const mapDispatchToProps = dispatch => ({
