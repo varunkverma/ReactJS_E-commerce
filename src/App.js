@@ -4,6 +4,8 @@ import "./App.css";
 import HomePage from "./pages/homepage/homepage.component";
 import ShopPage from "../src/pages/shop/shop.component.jsx";
 import Header from "../src/components/header/header.component.jsx";
+import CheckoutPage from "./pages/checkout/checkout.component.jsx";
+
 import SignInAndSignUpPage from "../src/pages/sign-in-and-sign-up/sign-in-and-sign-up.component.jsx";
 import {
   auth,
@@ -45,7 +47,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div>
         <Header />
@@ -63,6 +64,7 @@ class App extends React.Component {
               )
             }
           />
+          <Route exact path="/checkout" component={CheckoutPage} />
         </Switch>
       </div>
     );
